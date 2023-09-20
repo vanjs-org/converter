@@ -58,7 +58,7 @@ The following result will be returned:
 
 ### Using VanJS Components
 
-_This is only supported in the converter library, not in the UI._
+_This is only supported in the converter library, not in the UI. The [root cause](https://github.com/remarkablemark/html-react-parser/issues/168#issuecomment-699536994) is [html-dom-parser](https://www.npmjs.com/package/html-dom-parser) doesn't support case-sensitive parsing on the client side._
 
 The input HTML string can be a mix of HTML elements and custom UI components built with **VanJS**. To use custom UI components, just specify the component similar to regular HTML tags. For instance, assume we have custom UI components similar to the ones shown in https://vanjs.org/ home page:
 
