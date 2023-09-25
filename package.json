@@ -1,6 +1,6 @@
 {
   "name": "vanjs-converter",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Utility to convert MD or HTML text into VanJS code",
   "type": "module",
   "files": [
@@ -10,7 +10,9 @@
   "main": "dist/converter.js",
   "browser": "dist/converter.js",
   "scripts": {
-    "build": "bash build.sh"
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "ava"
   },
   "repository": {
     "type": "git",

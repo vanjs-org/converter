@@ -12,7 +12,8 @@ type Dom = Element | Text
 const filterDoms = (doms: readonly ChildNode[], skipEmptyText: boolean) =>
   <Dom[]>doms.filter(
     c => c.type === "tag" && c.name !== dummy ||
-    c.type === "text" && (!skipEmptyText || /\S/.test(c.data)))
+    c.type === "text" && (!skipEmptyText || /\S/.test(c.data)) ||
+    c.type === "script")
 
 export interface HtmlToVanCodeOptions {
   indent?: number

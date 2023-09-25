@@ -283,6 +283,24 @@ test("htmlToVanCode: nested spans", t => t.deepEqual(htmlToVanCode('<span><span>
     tags: ["span"],
     components: [],
 }));
+test("htmlToVanCode: script", t => t.deepEqual(htmlToVanCode('<script type="text/javascript" src="/prism.js"></script>'), {
+    code: [
+        'script({type: "text/javascript", src: "/prism.js"})',
+    ],
+    tags: ["script"],
+    components: [],
+}));
+test("htmlToVanCode: inline script", t => t.deepEqual(htmlToVanCode(`<script>
+  console.log("Hello, World!")
+</script>`), {
+    code: [
+        'script(',
+        '  "\\n  console.log(\\"Hello, World!\\")\\n",',
+        ')',
+    ],
+    tags: ["script"],
+    components: [],
+}));
 test("mdToVanCode: Hello", t => t.deepEqual(mdToVanCode(`👋Hello
 * 🗺️World
 * [🍦VanJS](https://vanjs.org/)

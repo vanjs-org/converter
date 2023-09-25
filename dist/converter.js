@@ -3,7 +3,8 @@ import { marked } from 'marked';
 const dummy = "DUMMY";
 const quoteIfNeeded = (key) => /^[a-zA-Z_][a-zA-Z_0-9]+$/.test(key) ? key : `"${key}"`;
 const filterDoms = (doms, skipEmptyText) => doms.filter(c => c.type === "tag" && c.name !== dummy ||
-    c.type === "text" && (!skipEmptyText || /\S/.test(c.data)));
+    c.type === "text" && (!skipEmptyText || /\S/.test(c.data)) ||
+    c.type === "script");
 export const htmlToVanCode = (html, { indent = 2, spacing = false, skipEmptyText = false, htmlTagPred = s => s.toLowerCase() === s, } = {}) => {
     const attrsToVanCode = (attrs, children) => {
         const space = spacing ? " " : "";
