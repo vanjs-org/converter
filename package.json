@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/vanjs-org/converter/issues"
   },
-  "homepage": "https://github.com/vanjs-org/converter#readme",
+  "homepage": "https://vanjs.org/converter-lib",
   "dependencies": {
     "html-dom-parser": "^4.0.0",
     "marked": "^9.0.0"
