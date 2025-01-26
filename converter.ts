@@ -26,7 +26,7 @@ export const htmlToVanCode = (html: string, {
   indent = 2,
   spacing = false,
   skipEmptyText = false,
-  htmlTagPred = s => s.toLowerCase() === s,
+  htmlTagPred = s => s[0].toUpperCase() !== s[0],
 }: HtmlToVanCodeOptions = {}) => {
   const attrsToVanCode = (attrs: Record<string, string>, children: readonly Dom[]) => {
     const space = spacing ? " " : ""
