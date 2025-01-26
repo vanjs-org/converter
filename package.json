@@ -1,6 +1,6 @@
 {
   "name": "vanjs-converter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Utility to convert MD or HTML text into VanJS code",
   "type": "module",
   "files": [

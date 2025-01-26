@@ -256,6 +256,20 @@ test("htmlToVanCode: custom components", t => t.deepEqual(
   },
 ))
 
+test("htmlToVanCode: tags with lower camel case", t => t.deepEqual(
+  htmlToVanCode('<clipPath id="circleClip"><circle cx="150" cy="150" r="100" /></clipPath>'),
+  {
+    code: [
+      'clipPath({id: "circleClip"},',
+      '  circle({cx: "150", cy: "150", "r": "100"}),',
+      ')',
+    ],
+    tags: ["circle", "clipPath"],
+    components: [],
+  },
+))
+
+
 test("htmlToVanCode: multiple elements", t => t.deepEqual(
   htmlToVanCode('<div><p>👋Hello</p><ul><li>🗺️World</li><li><a href="https://vanjs.org/">🍦VanJS</a></li></ul></div><p>Second Paragraph</p>'),
   {

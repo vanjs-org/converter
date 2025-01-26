@@ -5,7 +5,7 @@ const quoteIfNeeded = (key) => /^[a-zA-Z_][a-zA-Z_0-9]+$/.test(key) ? key : `"${
 const filterDoms = (doms, skipEmptyText) => doms.filter(c => c.type === "tag" && c.name !== dummy ||
     c.type === "text" && (!skipEmptyText || /\S/.test(c.data)) ||
     c.type === "script");
-export const htmlToVanCode = (html, { indent = 2, spacing = false, skipEmptyText = false, htmlTagPred = s => s[0].toUpperCase() !== s[0], } = {}) => {
+export const htmlToVanCode = (html, { indent = 2, spacing = false, skipEmptyText = false, htmlTagPred = s => s[0].toLowerCase() === s[0], } = {}) => {
     const attrsToVanCode = (attrs, children) => {
         const space = spacing ? " " : "";
         return Object.keys(attrs).length === 0 ? "" :

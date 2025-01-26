@@ -1,7 +1,7 @@
 import parse from "html-dom-parser"
-import { ChildNode, Element, Text } from "domhandler"
-import { marked } from 'marked'
-import { RendererObject } from "MarkedOptions"
+import {ChildNode, Element, Text} from "domhandler"
+import {marked} from 'marked'
+import {RendererObject} from "MarkedOptions"
 
 const dummy = "DUMMY"
 
@@ -26,7 +26,7 @@ export const htmlToVanCode = (html: string, {
   indent = 2,
   spacing = false,
   skipEmptyText = false,
-  htmlTagPred = s => s[0].toUpperCase() !== s[0],
+  htmlTagPred = s => s[0].toLowerCase() === s[0],
 }: HtmlToVanCodeOptions = {}) => {
   const attrsToVanCode = (attrs: Record<string, string>, children: readonly Dom[]) => {
     const space = spacing ? " " : ""
